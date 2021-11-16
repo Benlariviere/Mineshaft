@@ -39,5 +39,5 @@ Material:
     - VitesseMouvement: 0.5
     - _Float: 0.68
     m_Colors:
-    - CouleurPortail: {r: 0.3423572, g: 1.0991467, b: 1.2613161, a: 0}
+    - CouleurPortail: {r: 1.3250862, g: 4.2555656, b: 4.867144, a: 0}
   m_BuildTextureStacks: []
