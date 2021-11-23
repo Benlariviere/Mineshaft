@@ -8,11 +8,13 @@ public class Bar : MonoBehaviour
 
     public GameObject bar;
     public int time;
+    public int vie;
 
     // Start is called before the first frame update
     void Start()
     {
         AnimBar();
+        
     }
 
     // Update is called once per frame
