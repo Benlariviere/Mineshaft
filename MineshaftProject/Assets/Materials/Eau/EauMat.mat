@@ -39,7 +39,7 @@ Material:
     - NormalStrength: 1
     - Power: 4.09
     - Smoothness: 4.54
-    - Vitesse: 0.21
+    - Vitesse: 0.37
     m_Colors:
     - BaseColor: {r: 0, g: 1.003922, b: 1.639216, a: 0}
     - Couleur: {r: 0, g: 5.4563413, b: 7.5079255, a: 0}

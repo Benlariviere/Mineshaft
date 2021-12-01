@@ -10,6 +10,7 @@ public class GestionBarre : MonoBehaviour
     private float FeuActuelle;
     public Image BarreFeu;
     public GameObject Peur;
+
     void Start()
     {
         FeuActuelle = FeuMax;
@@ -23,11 +24,13 @@ public class GestionBarre : MonoBehaviour
     }
     void GestionPeur()
     {
-      /*  if (FeuActuelle < 0)
-        {
-           Volume GlobalPeur   = gameObject.GetComponent<volume>();
-        }
-      */
+        /*  if (FeuActuelle < 0)
+          {
+             Volume GlobalPeur   = gameObject.GetComponent<volume>();
+          }
+        */
+
+         //Peur.GetComponent<>().weight = 0.1;
     }
     private void OnTriggerEnter(Collider infosCollision)
     {
@@ -35,6 +38,12 @@ public class GestionBarre : MonoBehaviour
         {
             FeuActuelle = FeuMax;
             infosCollision.gameObject.SetActive(false);
+        }
+
+        else if (infosCollision.gameObject.tag == "AI")
+        {
+            FeuActuelle -= 100f;
+            //infosCollision.gameObject.SetActive(false);
         }
     }
 }
