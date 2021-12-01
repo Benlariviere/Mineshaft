@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class GestionBarre : MonoBehaviour
 {
@@ -10,9 +12,12 @@ public class GestionBarre : MonoBehaviour
     private float FeuActuelle;
     public Image BarreFeu;
     public GameObject Peur;
+    public Volume MonVolume;
+   // var volume = target.GetComponent<Volume>();
     void Start()
     {
         FeuActuelle = FeuMax;
+        MonVolume = Peur.GetComponent<Volume>();
     }
 
     // Update is called once per frame
@@ -23,11 +28,13 @@ public class GestionBarre : MonoBehaviour
     }
     void GestionPeur()
     {
-      /*  if (FeuActuelle < 0)
-        {
-           Volume GlobalPeur   = gameObject.GetComponent<volume>();
-        }
-      */
+          if (FeuActuelle < 0)
+          {
+            ActivationPeur();
+          }
+        
+        
+
     }
     private void OnTriggerEnter(Collider infosCollision)
     {
@@ -35,6 +42,15 @@ public class GestionBarre : MonoBehaviour
         {
             FeuActuelle = FeuMax;
             infosCollision.gameObject.SetActive(false);
+        }
+    }
+    void ActivationPeur()
+    {
+        if (MonVolume.profile.TryGet<Vignette>(out var vignette))
+        {
+           // vignette.SetActive(true);
+            vignette.intensity.overrideState = true;
+           // vignette.intensity.value = 2f;
         }
     }
 }
