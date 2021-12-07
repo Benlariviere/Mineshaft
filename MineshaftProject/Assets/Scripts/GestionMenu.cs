@@ -17,7 +17,7 @@ public class GestionMenu : MonoBehaviour
     {
         
     }
-    public void Jouer() // Efface toutes les données du jeu et crée une nouvelle partie
+    public void Jouer() // Efface toutes les donnï¿½es du jeu et crï¿½e une nouvelle partie
     {
        
         SceneManager.LoadScene(1);
@@ -26,5 +26,8 @@ public class GestionMenu : MonoBehaviour
     public void QuitterJeu() // Permet de quitter le jeu
     {
         Application.Quit();
+        
+        
+        
     }
 }
