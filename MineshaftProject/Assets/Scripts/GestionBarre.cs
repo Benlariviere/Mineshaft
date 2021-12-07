@@ -12,7 +12,8 @@ public class GestionBarre : MonoBehaviour
     private float FeuActuelle;
     public Image BarreFeu;
     public GameObject Peur;
-    
+    public GameObject Torch;
+
 
     void Start()
     {
@@ -23,7 +24,7 @@ public class GestionBarre : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        FeuActuelle -= 10f;
+        FeuActuelle -= 2f;
         BarreFeu.fillAmount = FeuActuelle / FeuMax;
 
 
@@ -34,6 +35,8 @@ public class GestionBarre : MonoBehaviour
 
         if (FeuActuelle <= 0)
         {
+           Torch.SetActive(false);
+            
             var volumePeur = Peur.GetComponent<Volume>();
 
             if (volumePeur.profile.TryGet<Vignette>(out var vignette))
@@ -61,6 +64,7 @@ public class GestionBarre : MonoBehaviour
 
         if (FeuActuelle >= 0)
         {
+            Torch.SetActive(true);
             var volumePeur = Peur.GetComponent<Volume>();
 
             if (volumePeur.profile.TryGet<Vignette>(out var vignette))

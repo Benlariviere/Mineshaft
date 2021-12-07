@@ -13622,6 +13622,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Torch
       objectReference: {fileID: 0}
+    - target: {fileID: 1119661241769568, guid: 073d73ef94a2e9e479d6418a7d745b8f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1185247958910898, guid: 073d73ef94a2e9e479d6418a7d745b8f, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -36108,6 +36112,7 @@ MonoBehaviour:
   FeuMax: 4000
   BarreFeu: {fileID: 1835135770}
   Peur: {fileID: 1798729306}
+  Torch: {fileID: 2087614304}
 --- !u!143 &1309536690 stripped
 CharacterController:
   m_CorrespondingSourceObject: {fileID: 143394258721903950, guid: 073d73ef94a2e9e479d6418a7d745b8f,
@@ -56734,6 +56739,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4608388270821452, guid: da5030341097dd74caa0137b0b47e22d,
     type: 3}
   m_PrefabInstance: {fileID: 2058318280}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2087614304 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1119661241769568, guid: 073d73ef94a2e9e479d6418a7d745b8f,
+    type: 3}
+  m_PrefabInstance: {fileID: 528720161}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2107143471
 GameObject:
