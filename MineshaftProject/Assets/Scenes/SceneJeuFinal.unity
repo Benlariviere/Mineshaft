@@ -14032,6 +14032,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 143394258721903950, guid: 073d73ef94a2e9e479d6418a7d745b8f,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 143394258721903950, guid: 073d73ef94a2e9e479d6418a7d745b8f,
+        type: 3}
       propertyPath: m_StepOffset
       value: 0.7
       objectReference: {fileID: 0}
@@ -36113,6 +36118,8 @@ MonoBehaviour:
   BarreFeu: {fileID: 1835135770}
   Peur: {fileID: 1798729306}
   Torch: {fileID: 2087614304}
+  Mort: {fileID: 397908698}
+  Perso: {fileID: 1309536686}
 --- !u!143 &1309536690 stripped
 CharacterController:
   m_CorrespondingSourceObject: {fileID: 143394258721903950, guid: 073d73ef94a2e9e479d6418a7d745b8f,

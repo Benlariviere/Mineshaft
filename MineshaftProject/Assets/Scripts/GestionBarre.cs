@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
 
 public class GestionBarre : MonoBehaviour
 {
@@ -13,6 +14,13 @@ public class GestionBarre : MonoBehaviour
     public Image BarreFeu;
     public GameObject Peur;
     public GameObject Torch;
+    public GameObject Mort;
+    public GameObject Perso;
+    
+    
+
+    //public static bool gameOver;
+    
 
 
     void Start()
@@ -24,7 +32,7 @@ public class GestionBarre : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        FeuActuelle -= 2f;
+        FeuActuelle -= 20f;
         BarreFeu.fillAmount = FeuActuelle / FeuMax;
 
 
@@ -46,7 +54,15 @@ public class GestionBarre : MonoBehaviour
 
                 if (vignette.intensity.value >= 1f)
                 {
-                    Invoke("mortPerso", 1);  //mort du personnage qui invoke la fin du jeu
+                    //mort du personnage
+                    
+
+                    Mort.SetActive(true);
+
+                    Perso.GetComponent<character_controller>().enabled = false;
+                    Camera.main.gameObject.GetComponent<Vise>().enabled = false;
+
+                    Invoke("MortPerso",3f);
                 }
             }
 
@@ -54,6 +70,7 @@ public class GestionBarre : MonoBehaviour
             {
                 lensD.intensity.overrideState = true;
                 if (lensD.intensity.value <= 0.7f)
+
                 {
                     lensD.intensity.value += 0.1f * Time.deltaTime;
                 }
@@ -100,16 +117,19 @@ public class GestionBarre : MonoBehaviour
             infosCollision.gameObject.SetActive(false);
         }
 
-        else if (infosCollision.gameObject.tag == "AI")
-        {
-            FeuActuelle -= 100f;
-            //infosCollision.gameObject.SetActive(false);
-        }
     }
 
 
-     void mortPerso()
+     void MortPerso()
     {
 
+        //Time.timeScale = 0;
+
+        SceneManager.LoadScene(0);
+        
+        
+        
+        
+        
     }
 }
