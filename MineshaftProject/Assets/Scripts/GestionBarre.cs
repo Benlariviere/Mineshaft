@@ -12,82 +12,30 @@ public class GestionBarre : MonoBehaviour
     private float FeuActuelle;
     public Image BarreFeu;
     public GameObject Peur;
-    
-
+    public Volume MonVolume;
+   // var volume = target.GetComponent<Volume>();
     void Start()
     {
         FeuActuelle = FeuMax;
-        
+        MonVolume = Peur.GetComponent<Volume>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        FeuActuelle -= 10f;
+        FeuActuelle -= 1f;
         BarreFeu.fillAmount = FeuActuelle / FeuMax;
-
-
-        /*------------Gestion peur-------------*/
-
-         
-        /*------------augmente la peur-------------*/
-
-        if (FeuActuelle <= 0)
-        {
-            var volumePeur = Peur.GetComponent<Volume>();
-
-            if (volumePeur.profile.TryGet<Vignette>(out var vignette))
-            {
-                vignette.intensity.overrideState = true;
-                vignette.intensity.value += 0.1f * Time.deltaTime;
-
-                if (vignette.intensity.value >= 1f)
-                {
-                    Invoke("mortPerso", 1);  //mort du personnage qui invoke la fin du jeu
-                }
-            }
-
-            if (volumePeur.profile.TryGet<LensDistortion>(out var lensD))
-            {
-                lensD.intensity.overrideState = true;
-                if (lensD.intensity.value <= 0.7f)
-                {
-                    lensD.intensity.value += 0.1f * Time.deltaTime;
-                }
-            }
-        }
-
-        /*------------reset la peur-------------*/
-
-        if (FeuActuelle >= 0)
-        {
-            var volumePeur = Peur.GetComponent<Volume>();
-
-            if (volumePeur.profile.TryGet<Vignette>(out var vignette))
-            {
-                //vignette.intensity.overrideState = false;
-                vignette.intensity.value = 0f;
-
-                
-            }
-
-            if (volumePeur.profile.TryGet<LensDistortion>(out var lensD))
-            {
-                //lensD.intensity.overrideState = false;
-                lensD.intensity.value = 0f;
-            }
-        }
-
-
-
-
-
-
-
-
+    }
+    void GestionPeur()
+    {
+          if (FeuActuelle < 0)
+          {
+            ActivationPeur();
+          }
+        
+        
 
     }
-   
     private void OnTriggerEnter(Collider infosCollision)
     {
         if(infosCollision.gameObject.tag == "Feu")
@@ -103,10 +51,13 @@ public class GestionBarre : MonoBehaviour
             //infosCollision.gameObject.SetActive(false);
         }
     }
-
-
-     void mortPerso()
+    void ActivationPeur()
     {
-
+        if (MonVolume.profile.TryGet<Vignette>(out var vignette))
+        {
+           // vignette.SetActive(true);
+            vignette.intensity.overrideState = true;
+           // vignette.intensity.value = 2f;
+        }
     }
 }
