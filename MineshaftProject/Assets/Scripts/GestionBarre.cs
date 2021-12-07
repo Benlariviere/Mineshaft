@@ -99,6 +99,7 @@ public class GestionBarre : MonoBehaviour
         else if (infosCollision.gameObject.tag == "AI")
         {
             FeuActuelle -= 100f;
+
             //infosCollision.gameObject.SetActive(false);
         }
     }
