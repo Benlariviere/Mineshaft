@@ -10,17 +10,18 @@ public class GestionBarre : MonoBehaviour
 {
     // Start is called before the first frame update
     public float FeuMax;
-    private float FeuActuelle;
+    public float FeuActuelle;
     public Image BarreFeu;
     public GameObject Peur;
     public GameObject Torch;
     public GameObject Mort;
     public GameObject Perso;
-    
-    
 
     //public static bool gameOver;
-    
+
+    public AudioSource audioSourceFeux;     // L'AudioSource du personnage
+
+    public AudioClip BoulleFeux;
 
 
     void Start()
@@ -32,7 +33,7 @@ public class GestionBarre : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        FeuActuelle -= 2f;
+        FeuActuelle -= 20f;
         BarreFeu.fillAmount = FeuActuelle / FeuMax;
 
 
@@ -44,7 +45,9 @@ public class GestionBarre : MonoBehaviour
         if (FeuActuelle <= 0)
         {
            Torch.SetActive(false);
+
             
+            // joue son torche eteinte
             var volumePeur = Peur.GetComponent<Volume>();
 
             if (volumePeur.profile.TryGet<Vignette>(out var vignette))
@@ -82,6 +85,8 @@ public class GestionBarre : MonoBehaviour
         if (FeuActuelle >= 0)
         {
             Torch.SetActive(true);
+
+            // joue son torche 
             var volumePeur = Peur.GetComponent<Volume>();
 
             if (volumePeur.profile.TryGet<Vignette>(out var vignette))
@@ -113,6 +118,8 @@ public class GestionBarre : MonoBehaviour
     {
         if(infosCollision.gameObject.tag == "Feu")
         {
+            //GetComponent<AudioSource>().PlayOneShot(BoulleFeux, 1f);
+
             FeuActuelle = FeuMax;
             infosCollision.gameObject.SetActive(false);
         }

@@ -18,6 +18,12 @@ public class character_controller : MonoBehaviour
     Vector3 velocity;
     bool isGrounded;
 
+    public AudioSource audioSource;     // L'AudioSource du personnage
+
+    public AudioClip footSteps;
+
+    
+
 
     // Update is called once per frame
     void Update()
@@ -27,7 +33,17 @@ public class character_controller : MonoBehaviour
         if(isGrounded && velocity.y < 0)  //verifie si le player est au sol
         {
             velocity.y = -2f;
+
         }
+
+        if (isGrounded && !audioSource.isPlaying && controller.velocity.magnitude > 0)  //condition pour jouer le son de marche
+        {
+        audioSource.volume = Random.Range(0.01f, 0.05f);
+        audioSource.pitch = Random.Range(0.7f, 1f);
+        GetComponent<AudioSource>().PlayOneShot(footSteps);
+        }
+           
+
 
         float x = Input.GetAxis("Horizontal");   //détecte les imput et apllique la valeur aux axes
         float z = Input.GetAxis("Vertical");
