@@ -19,7 +19,7 @@ public class GestionBarre : MonoBehaviour
 
     //public static bool gameOver;
 
-    public AudioSource audioSourceFeux;     // L'AudioSource du personnage
+    //public AudioSource audioSourceFeux;     // L'AudioSource du personnage
 
     public AudioClip BoulleFeux;
 
@@ -118,7 +118,7 @@ public class GestionBarre : MonoBehaviour
     {
         if(infosCollision.gameObject.tag == "Feu")
         {
-            //GetComponent<AudioSource>().PlayOneShot(BoulleFeux, 1f);
+            GetComponent<AudioSource>().PlayOneShot(BoulleFeux,13f);
 
             FeuActuelle = FeuMax;
             infosCollision.gameObject.SetActive(false);
