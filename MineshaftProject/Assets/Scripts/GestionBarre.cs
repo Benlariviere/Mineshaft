@@ -33,7 +33,7 @@ public class GestionBarre : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        FeuActuelle -= 20f;
+        FeuActuelle -= 2f;
         BarreFeu.fillAmount = FeuActuelle / FeuMax;
 
 
