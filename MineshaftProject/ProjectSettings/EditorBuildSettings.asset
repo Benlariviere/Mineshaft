@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SceneLouisSon.unity
     guid: 3e0c9cda17b1e4d41bcf9fb08b17ddfd
+  - enabled: 1
+    path: Assets/Scenes/SceneVictoire.unity
+    guid: 6cbdc49f27e55cb43a77bc75f7c1479a
+  - enabled: 1
+    path: Assets/Scenes/SceneDebut.unity
+    guid: 0cf8332da49658944947246e66ebb68f
+  - enabled: 1
+    path: Assets/Scenes/SceneFinMort.unity
+    guid: 63049f0b06ba9ab4496f0799443dae57
   m_configObjects: {}
