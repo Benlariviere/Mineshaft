@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class character_controller : MonoBehaviour
 {
@@ -45,7 +46,7 @@ public class character_controller : MonoBehaviour
            
 
 
-        float x = Input.GetAxis("Horizontal");   //détecte les imput et apllique la valeur aux axes
+        float x = Input.GetAxis("Horizontal");   //dï¿½tecte les imput et apllique la valeur aux axes
         float z = Input.GetAxis("Vertical");
 
         Vector3 move = transform.right * x + transform.forward * z;
@@ -60,6 +61,18 @@ public class character_controller : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+
+    }
+
+
+                    /* Active la fin */
+
+       private void OnTriggerEnter(Collider infosCollision)
+    {
+        if(infosCollision.gameObject.tag == "Fin")
+        {
+            SceneManager.LoadScene("SceneVictoire");
+        }
 
     }
 }
