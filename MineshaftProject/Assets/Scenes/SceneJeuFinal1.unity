@@ -48640,7 +48640,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.9
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -53404,7 +53404,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.9
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -56281,7 +56281,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.9
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -83287,7 +83287,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.9
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -89675,7 +89675,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4750730027013854, guid: 073d73ef94a2e9e479d6418a7d745b8f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 632.24
+      value: 625.19
       objectReference: {fileID: 0}
     - target: {fileID: 4750730027013854, guid: 073d73ef94a2e9e479d6418a7d745b8f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -89683,7 +89683,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4750730027013854, guid: 073d73ef94a2e9e479d6418a7d745b8f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 542.77
+      value: 505.59
       objectReference: {fileID: 0}
     - target: {fileID: 4750730027013854, guid: 073d73ef94a2e9e479d6418a7d745b8f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -90133,7 +90133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ce5d7aeeb41d2e4698f05e5dbe006f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FeuMax: 4000
+  FeuMax: 6000
   FeuActuelle: 0
   BarreFeu: {fileID: 1835135770}
   Peur: {fileID: 1798729306}
