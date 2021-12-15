@@ -18,7 +18,7 @@ public class ChangementSceneFin : MonoBehaviour
         
     }
     void LoadMenu () {
-        SceneManager.LoadScene("SceneDebut");
+        SceneManager.LoadScene("SceneJeuFinal1");
       }
       
 }

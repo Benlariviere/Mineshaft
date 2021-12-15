@@ -63,7 +63,7 @@ public class GestionBarre : MonoBehaviour
                     Mort.SetActive(true);
 
                     Perso.GetComponent<character_controller>().enabled = false;
-                    Camera.main.gameObject.GetComponent<Vise>().enabled = false;
+                   Camera.main.gameObject.GetComponent<Vise>().enabled = false;
 
                     Invoke("MortPerso",3f);
                 }
@@ -132,7 +132,7 @@ public class GestionBarre : MonoBehaviour
 
         //Time.timeScale = 0;
 
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
         
         
         

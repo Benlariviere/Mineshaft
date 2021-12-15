@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/SceneJeuFinal1.unity
     guid: db138eed5c051a842a336715ab6648a3
   - enabled: 1
-    path: Assets/Scenes/SceneFinMort.unity
-    guid: 63049f0b06ba9ab4496f0799443dae57
-  - enabled: 1
     path: Assets/Scenes/SceneVictoire.unity
     guid: 6cbdc49f27e55cb43a77bc75f7c1479a
   m_configObjects: {}
